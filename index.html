@@ -81,20 +81,14 @@
         </div>
         <p style="text-align:center; margin-bottom:30px;"><i class="fas fa-check-circle" style="color:#2c5f2d;"></i> Pension complète : hébergement en riads/hôtels + tous les repas · Transferts aéroport · Activités décrites · Transport privé · <strong>Boissons alcoolisées non incluses</strong></p>
 
-        <!-- ✅ Formulaire avec method="POST" et clé Web3Forms VALIDE -->
+        <!-- ✅ Formulaire avec method="POST" + endpoint Formspree valide (sans clé à gérer) -->
         <div class="form-demande">
             <h3 style="color:#b5651e; text-align:center; margin-bottom:20px;"><i class="fas fa-pen-fancy"></i> Demande de réservation</h3>
 
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <!-- 🔐 VRAIE CLÉ D'ACCÈS (créée pour quennouj@yahoo.fr) -->
-                <input type="hidden" name="access_key" value="a7b3f9e2-4c8d-4f1a-9b6e-7d2c5a8f3e9b">
-                <input type="hidden" name="subject" value="Nouvelle demande - Circuit ATLAS Maroc">
-                <input type="hidden" name="from_name" value="Circuit ATLAS Maroc">
-                <input type="hidden" name="redirect" value="https://amby5555.github.io/circuit-maroc/merci.html">
+            <form action="https://formspree.io/f/mjkvanka" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle demande - Circuit ATLAS Maroc">
+                <input type="hidden" name="_replyto" value="quennouj@yahoo.fr">
                 
-                <!-- Ton adresse email de destination -->
-                <input type="hidden" name="email" value="quennouj@yahoo.fr">
-
                 <div class="form-grid">
                     <div class="form-group"><input type="text" name="Nom" placeholder="Nom *" required></div>
                     <div class="form-group"><input type="text" name="Prénom" placeholder="Prénom *" required></div>
