@@ -81,22 +81,22 @@
         </div>
         <p style="text-align:center; margin-bottom:30px;"><i class="fas fa-check-circle" style="color:#2c5f2d;"></i> Pension complète : hébergement en riads/hôtels + tous les repas · Transferts aéroport · Activités décrites · Transport privé · <strong>Boissons alcoolisées non incluses</strong></p>
 
-        <!-- Formulaire POST vers FormSubmit (FONCTIONNEL une fois hébergé) -->
+        <!-- ✅ FORMULAIRE AVEC METHOD="POST" -->
         <div class="form-demande">
             <h3 style="color:#b5651e; text-align:center; margin-bottom:20px;"><i class="fas fa-pen-fancy"></i> Demande de réservation</h3>
 
-            <form id="devisForm" action="https://formsubmit.co/quennouj@yahoo.fr" method="POST">
-                <!-- Champs cachés pour configuration -->
+            <form action="https://formsubmit.co/quennouj@yahoo.fr" method="POST">
+                <!-- Configuration requise par FormSubmit -->
                 <input type="hidden" name="_subject" value="Nouvelle demande - Circuit ATLAS Maroc">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://formsubmit.co/merci">
 
                 <div class="form-grid">
-                    <div class="form-group"><input type="text" name="Nom" placeholder="Nom *" required id="nom"></div>
-                    <div class="form-group"><input type="text" name="Prénom" placeholder="Prénom *" required id="prenom"></div>
-                    <div class="form-group"><input type="email" name="Email" placeholder="Email *" required id="email"></div>
-                    <div class="form-group"><input type="date" name="Date d'arrivée" id="dateSejour" value="2026-12-01"></div>
+                    <div class="form-group"><input type="text" name="Nom" placeholder="Nom *" required></div>
+                    <div class="form-group"><input type="text" name="Prénom" placeholder="Prénom *" required></div>
+                    <div class="form-group"><input type="email" name="Email" placeholder="Email *" required></div>
+                    <div class="form-group"><input type="date" name="Date d'arrivée" value="2026-12-01"></div>
                     <div class="form-group">
                         <select name="Adultes (14+)" id="nbAdultes">
                             <option value="1">1 adulte (14+)</option>
@@ -115,6 +115,7 @@
                     </div>
                 </div>
 
+                <!-- Affichage du total (calculé automatiquement) -->
                 <div class="total" id="totalPrix">Total : 0 €</div>
 
                 <button type="submit" class="btn-send"><i class="fas fa-paper-plane"></i> Envoyer ma demande</button>
@@ -142,7 +143,6 @@
         let enfants = parseInt(enfantsSel.value);
         let total = adultes * 800 + enfants * 400;
         totalSpan.innerHTML = `Total : ${total} €`;
-        return total;
     }
 
     adultesSel.addEventListener('change', updateTotal);
